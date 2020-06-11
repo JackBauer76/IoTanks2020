@@ -1,0 +1,8 @@
+Sketch uses 
+
+Servo
+TM1637
+Interrupt (PIR) sensor
+
+tested in a Nano
+

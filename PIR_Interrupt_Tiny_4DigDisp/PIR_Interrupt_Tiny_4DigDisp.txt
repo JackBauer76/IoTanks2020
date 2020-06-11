@@ -1,0 +1,7 @@
+Sketch uses 
+
+TM1637
+Interrupt (PIR) sensor
+
+tested in a Tiny
+
