@@ -54,7 +54,7 @@ void loop() {
     return;
   }
 
-  Serial.println(F("**Card Detected:**"));
+  Serial.println(F("**Tarjeta detectada:**"));
 
   //-------------------------------------------
 
@@ -64,7 +64,7 @@ void loop() {
 
   //-------------------------------------------
 
-  Serial.print(F("Name: "));
+  Serial.print(F("Nombre: "));
 
   byte buffer1[18];
 
@@ -74,14 +74,14 @@ void loop() {
   //------------------------------------------- GET FIRST NAME
   status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, 4, &key, &(mfrc522.uid)); //line 834 of MFRC522.cpp file
   if (status != MFRC522::STATUS_OK) {
-    Serial.print(F("Authentication failed: "));
+    Serial.print(F("se cago: "));
     Serial.println(mfrc522.GetStatusCodeName(status));
     return;
   }
 
   status = mfrc522.MIFARE_Read(block, buffer1, &len);
   if (status != MFRC522::STATUS_OK) {
-    Serial.print(F("Reading failed: "));
+    Serial.print(F("no puedo leer: "));
     Serial.println(mfrc522.GetStatusCodeName(status));
     return;
   }
@@ -103,14 +103,14 @@ void loop() {
 
   status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, 1, &key, &(mfrc522.uid)); //line 834
   if (status != MFRC522::STATUS_OK) {
-    Serial.print(F("Authentication failed: "));
+    Serial.print(F("no entiendo: "));
     Serial.println(mfrc522.GetStatusCodeName(status));
     return;
   }
 
   status = mfrc522.MIFARE_Read(block, buffer2, &len);
   if (status != MFRC522::STATUS_OK) {
-    Serial.print(F("Reading failed: "));
+    Serial.print(F("no puedo leer: "));
     Serial.println(mfrc522.GetStatusCodeName(status));
     return;
   }
@@ -123,7 +123,7 @@ void loop() {
 
   //----------------------------------------
 
-  Serial.println(F("\n**End Reading**\n"));
+  Serial.println(F("\n**ya termine**\n"));
 
   delay(1000); //change value if you want to read cards faster
 
